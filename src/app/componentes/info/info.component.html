@@ -1,0 +1,28 @@
+<div class="container">
+  <div 
+    class="row"
+    *ngFor="let item of items; let i = index"
+    [attr.data-aos]="item.animacion"
+    data-aos-offset="300"
+    data-aos-duration="1000"
+    data-aos-easing="ease-out-cubic"
+    data-aos-once="true"
+  >
+    <!-- Imagen -->
+    <div class="col col-img" [ngClass]="{'order-md-2': i % 2 !== 0}">
+      <div class="image-wrapper">
+        <img 
+          [src]="item.imagen"
+          alt="Imagen de ejemplo"
+        />
+      </div>
+    </div>
+
+    <!-- Texto -->
+    <div class="col col-text" [ngClass]="{'order-md-1': i % 2 !== 0}">
+      <div class="text-wrapper">
+        <p>{{ item.texto }}</p>
+      </div>
+    </div>
+  </div>
+</div>
